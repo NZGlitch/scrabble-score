@@ -1,2 +1,0 @@
-Connect to lightsail:
-#TODO ssh -i manta-rays.pem ubuntu@13.54.204.139

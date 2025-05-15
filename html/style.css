@@ -1,0 +1,235 @@
+/* === Global === */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* === Header === */
+.site-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.site-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-top: 10px;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.site-title {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin: 0;
+}
+
+/* === Form Container === */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.small-names {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
+
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* === Availability Table === */
+.availability-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  min-width: 600px;
+}
+
+.availability-table th,
+.availability-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.availability-table th {
+  background-color: #f0f0f0;
+}
+
+/* === Table Scroll Wrapper === */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* === Radio Buttons === */
+.radio-group {
+  margin-top: 1rem;
+}
+
+.radio-group label {
+  margin-right: 1rem;
+}
+
+/* === Submit Button === */
+.submit-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* === Heatmap Styling === */
+.heatmap td {
+  color: #fff;
+  font-weight: bold;
+}
+
+.heat-0 { background-color: #e0e0e0; color: #333; }
+.heat-1 { background-color: #c6dbef; }
+.heat-2 { background-color: #9ecae1; }
+.heat-3 { background-color: #6baed6; }
+.heat-4 { background-color: #4292c6; }
+.heat-5 { background-color: #2171b5; }
+.heat-6 { background-color: #08519c; }
+.heat-7 { background-color: #08306b; }
+.heat-8 { background-color: #041f4a; }
+.heat-9, .heat-10 { background-color: #021025; }
+
+/* === Submissions Table === */
+.submissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.submissions-table th,
+.submissions-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.submissions-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.submissions-table button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submissions-table button:hover {
+  background-color: #0056b3;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .availability-table th,
+  .availability-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .submissions-table th,
+  .submissions-table td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.submit-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff4d4d; /* Red for logout */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  max-width: 200px;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+

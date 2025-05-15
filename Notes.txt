@@ -1,0 +1,105 @@
+Notes.txt
+
+Create 'Game Night'
+Enter members
+
+Create Draw - round 1 is by grade, if odd # then last one matched to grade below
+
+If an odd number of players:
+	A random person from the top grade will be selected to have 2 games with 2 random players from the top available grade below thier grade
+
+They play, and put their 'tokens' on the pinboard appropriate.
+
+END of round:
+	Its possible that slow players may not finish in time for the next draw!!!!
+
+Subsequent Draws
+	Pair of in order of high score, so long as players have not played eachother before
+	ODD:
+		Lowest scoring player from the highest grade that has not been 'odd one out before'
+		Select the two players from the previous round with the highest score below the players score and of a grade lower than that player and that the tripple palyer has not played yet.
+
+		If ruleset can not be satisfied, director to make a determination.
+
+NOTE: # of players can change throughout the night, affecting the odd-one-out rules
+Director should be able to edit draws
+
+
+
+Problem Statement:
+	* VERIFICATION
+		1 player submits - other initials
+		Game Score: 180 - 700 - prompt to confirm
+		Bingo's: 0 - 6
+		TT: 0-3
+		100+: 0-3
+
+		When entering score, director can change an opponents name, however they will need to be warned:
+			* Previous entered score for that opponent will be deleted
+			* Auto fill when entering that opponents original draw wont work
+			
+
+
+	* Important that mouseless entry is fast and nice
+	* Table Money
+	* Affiliated Member
+	* Number of rounds - 2 people play each other
+	* A person can play more than one game a round
+	* Each person keeps a personal score - 
+			The person who has won takes a token with their name, and a token with thier opponents name, and places them both on the scoreboard.
+
+	Write down:
+	* Opp Name, thier score, opponents score, thier bingo, thier # of tripple-tripples, # thier turns scored 100+, List of actual 100+ words, Opps grade, Thier name, the date
+
+	* Round score is:
+		Base = Pscore/100 + Bingos + TT + 100turns
+		Win = GradeBonus
+		Draw = GradeBonus/2
+		Loss = 0
+		Total for round is base + win/draw/loss + (pscore >= 500 ? 1 : 0)
+
+	* Total for night is (sum of scores / # games) * 3
+
+	* Matrix for calculating grade bonus (requires both players grades to work out)
+
+	Create a CSV with a row for each player at the end of the night with the following columns:
+		* List of 100+ words
+		* Player Name
+		* Player Grade
+		* Total 'Night' Score this week
+		* Average Game score this week
+		* # Bingos this week
+		* # TTs this week
+		* # 100+ this week
+		* Best individual game score this year
+		* Date of best score
+		* Average game score this year
+
+
+MVP Perspective:
+
+* Ability to enter membership
+	Name, Grade
+
+* Ability to create an event
+* Ability to specify who is playing
+
+Each Round:
+	Adjust players present (add/remove - if adding and need swiss, use avg score for grade in previous round)
+	Create a draw following rules above - IFF not all scores for previous rounds are available ask director to provide a estimate
+	Allow director to modify draw
+	Play begins
+	Players write their round result on a small slip, and then hand these to the director
+	Round can only be closed out when all scores are complete, BUT new rounds can be created.
+
+At the end of the night
+- Director selects 'score night'
+- System advises of any unclosed rounds
+- generates csv file for upload
+
+Overall: Ability to export ALL data with a given date range
+
+Fun: Upload board
+
+
+

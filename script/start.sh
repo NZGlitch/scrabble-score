@@ -1,7 +1,19 @@
 #!/bin/bash
 
-#docker build -t scrabble-score-image .
-#docker run -d -p 8080:80 --name scrabble-score-app scrabble-score-image
+SERVICE_NAME="web"
 
+echo "🔍 Checking for running containers..."
+RUNNING_CONTAINER=$(docker ps -q --filter "name=${SERVICE_NAME}")
 
-docker run -d -p 8080:80 -v $(pwd)/submissions.db:/var/www/html/includes/database.db --name scrabble-score-app scrabble-score-image
+if [ -n "$RUNNING_CONTAINER" ]; then
+  echo "🛑 Stopping running container..."
+  docker-compose down
+else
+  echo "✅ No running container found."
+fi
+
+echo "🔨 Rebuilding the image..."
+docker-compose build
+
+echo "🚀 Starting the container..."
+docker-compose -f docker-compose.yml up -d

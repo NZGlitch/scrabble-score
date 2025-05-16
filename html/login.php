@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../includes/Auth.php';
 
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';

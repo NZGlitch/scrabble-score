@@ -17,15 +17,19 @@ $error = $_GET['error'] ?? '';
   </header>
 
   <main class="main-content">
-    <p>Welcome to Scrabble Score – your tool for tracking Scrabble game scores easily!</p>
-    <form method="POST" action="login.php">
-      <label>Email:</label><br>
-      <input type="email" name="email" required><br>
-      <label>Password:</label><br>
-      <input type="password" name="password" required><br>
-      <button type="submit">Login</button>
-    </form>
-
+    <!-- HTML -->
+      <form action="/login" method="post" class="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" required/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+    
     <?php if ($error): ?>
       <p style="color:red"><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>

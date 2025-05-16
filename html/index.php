@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once __DIR__ . '/../includes/Auth.php';
+
+$error = $_GET['error'] ?? '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +20,17 @@
 
   <main class="main-content">
     <p>Welcome to Scrabble Score – your tool for tracking Scrabble game scores easily!</p>
+    <form method="POST" action="login.php">
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br>
+      <label>Password:</label><br>
+      <input type="password" name="password" required><br>
+      <button type="submit">Login</button>
+    </form>
+
+    <?php if ($error): ?>
+      <p style="color:red"><?= htmlspecialchars($error) ?></p>
+    <?php endif; ?>
   </main>
 
   <footer class="footer">

@@ -1,4 +1,4 @@
 *.pem
-includes/database.db
 ignore
 **.DS_STORE
+data/scrabble.db

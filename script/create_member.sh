@@ -11,11 +11,11 @@ LAST_NAME="$2"
 EMAIL="$3"
 PASSWORD="$4"
 
-# Set paths
+# Paths
 DB_PATH="data/scrabble.db"
-PHP_INIT_SCRIPT="includes/db.php"
+PHP_INIT_SCRIPT="include/db.php"
 
-# Initialize DB if missing
+# Ensure DB is initialized
 if [ ! -f "$DB_PATH" ]; then
     echo "📦 Database not found. Initializing via PHP..."
     php -r "require_once '$PHP_INIT_SCRIPT';"
@@ -25,10 +25,19 @@ if [ ! -f "$DB_PATH" ]; then
     fi
 fi
 
-# Generate salt and hash
-SALT=$(LC_CTYPE=C head -c 200 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 100 | md5sum | awk '{print $1}')
+# Generate 100-character alphanumeric salt
+generate_salt() {
+    local SALT=""
+    while [ ${#SALT} -lt 100 ]; do
+        CHUNK=$(openssl rand -base64 48 | tr -dc 'A-Za-z0-9' | head -c 100)
+        SALT="${SALT}${CHUNK}"
+    done
+    echo "${SALT:0:100}"
+}
+
+SALT=$(generate_salt)
 COMBINED="${SALT}__${PASSWORD}"
-HASH=$(echo -n "$COMBINED" | md5sum | awk '{print $1}')
+HASH=$(echo -n "$COMBINED" | openssl dgst -sha256 | awk '{print $2}')
 NOW=$(date '+%Y-%m-%d %H:%M:%S')
 
 # Insert into SQLite

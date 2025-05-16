@@ -45,7 +45,7 @@ NOW=$(date '+%Y-%m-%d %H:%M:%S')
 
 # Insert into SQLite
 sqlite3 "$DB_PATH" <<SQL
-INSERT INTO member (first_name, last_name, email, password_salt, password_hash, created_at, updated_at)
+INSERT INTO members (first_name, last_name, email, password_salt, password_hash, created_at, updated_at)
 VALUES ('$FIRST_NAME', '$LAST_NAME', '$EMAIL', '$SALT', '$HASH', '$NOW', '$NOW');
 SQL
 

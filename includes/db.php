@@ -3,17 +3,17 @@ class Database {
     private static $instance = null;
     private $db;
 
-    private function __construct($dbPath) {
-        $newDB = !file_exists($dbPath);
+    private function __construct($dbFile) {
+        $newDB = !file_exists($dbFile);
 
         try {
             if ($newDB) {
                 // Create the database file
                 touch($dbFile);
-                $this->db = new SQLite3($dbPath);
+                $this->db = new SQLite3($dbFile);
                 $this->initializeSchema();
             } else { 
-                $this->db = new SQLite3($dbPath);
+                $this->db = new SQLite3($dbFile);
             }
         } catch (Exception $e) {
             die("Database connection failed: " . $e->getMessage());

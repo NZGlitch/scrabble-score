@@ -1,0 +1,27 @@
+public static function login(string $email, string $password): bool {
+    global $db;
+
+    $stmt = $db->prepare("SELECT * FROM members WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // User not found or password fields are NULL — disallow login
+    if (
+        !$user ||
+        empty($user['password_salt']) ||
+        empty($user['password_hash'])
+    ) {
+        return false;
+    }
+
+    $salt = $user['password_salt'];
+    $expectedHash = hash('sha256', $salt . '__' . $password);
+
+    if ($expectedHash === $user['password_hash']) {
+        $_SESSION['user_id'] = $user['member_number'];
+        $_SESSION['first_name'] = $user['first_name'];
+        return true;
+    }
+
+    return false;
+}

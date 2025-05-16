@@ -9,4 +9,5 @@ services:
     volumes:
        - ./html:/var/www/html
        - ./includes:/var/www/includes
+       - ./data:/var/www/data
     restart: unless-stopped

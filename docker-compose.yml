@@ -7,5 +7,5 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./includes/database.db:/var/www/html/includes/database.db
+      - ./data/scrabble.db:/var/www/html/includes/database.db
     restart: unless-stopped

@@ -6,7 +6,7 @@ class Auth {
     public static function login(string $email, string $password): bool {
         global $db;
 
-        $stmt = $db->prepare("SELECT * FROM members WHERE email = :email");
+        $stmt = $db->getHandle()->prepare("SELECT * FROM members WHERE email = :email");
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 

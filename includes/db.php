@@ -1,7 +1,7 @@
 <?php
 class Database {
     private static $instance = null;
-    private $db;
+    private $pdo;
 
     private function __construct($dbFile) {
         $newDB = !file_exists($dbFile);
@@ -10,11 +10,13 @@ class Database {
             if ($newDB) {
                 // Create the database file
                 touch($dbFile);
-                $this->db = new SQLite3($dbFile);
+                $this->pdo = new PDO('sqlite:' . $dbFile);
                 $this->initializeSchema();
             } else { 
-                $this->db = new SQLite3($dbFile);
+                $this->pdo = new PDO('sqlite:' . $dbFile);
             }
+
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             die("Database connection failed: " . $e->getMessage());
         }
@@ -27,8 +29,8 @@ class Database {
         return self::$instance;
     }
 
-    public function getHandle() {
-        return $this->db;
+    public function getHandle(): PDO {
+        return $this->pdo;
     }
 
     private function initializeSchema() {
@@ -39,8 +41,10 @@ class Database {
         }
 
         $schemaSql = file_get_contents($schemaFile);
-        if (!$this->db->exec($schemaSql)) {
-            die("Failed to execute schema SQL: " . $this->db->lastErrorMsg());
+        try {
+            $this->pdo->exec($schemaSql);
+        } catch (PDOException $e) {
+            die("Failed to execute schema SQL: " . $e->getMessage());
         }
     }
 }

@@ -8,8 +8,6 @@ class Database {
 
         try {
             if ($newDB) {
-                // Check if the database file exists
-                if (!file_exists($dbPath)) {
                 // Create the database file
                 touch($dbFile);
                 $this->db = new SQLite3($dbPath);

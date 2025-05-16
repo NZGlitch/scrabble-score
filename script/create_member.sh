@@ -11,9 +11,12 @@ LAST_NAME="$2"
 EMAIL="$3"
 PASSWORD="$4"
 
-# Paths
-DB_PATH="data/scrabble.db"
-PHP_INIT_SCRIPT="include/db.php"
+# Get the directory where this script lives
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Now define DB_PATH relative to script dir
+DB_PATH="$SCRIPT_DIR/../data/scrabble.db"
+PHP_INIT_SCRIPT="$SCRIPT_DIR/../includes/db.php"
 
 # Ensure DB is initialized
 if [ ! -f "$DB_PATH" ]; then

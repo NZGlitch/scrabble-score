@@ -48,3 +48,38 @@ body {
   text-align: center;
   padding: 1rem;
 }
+/* CSS */
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 0.75em;
+  background-color: #203864; /* Dark blue */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fcb814; /* Gold */
+  color: #000;
+}

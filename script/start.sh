@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE_NAME="SERVICE_NAME="scrabble-score-app"
+SERVICE_NAME="scrabble-score-app"
 
 echo "🔍 Checking for running containers..."
 RUNNING_CONTAINER=$(docker ps -q --filter "name=${SERVICE_NAME}")

@@ -26,7 +26,7 @@ if [ ! -f "$DB_PATH" ]; then
 fi
 
 # Generate salt and hash
-SALT=$(head -c 200 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 100 | md5sum | awk '{print $1}')
+SALT=$(LC_CTYPE=C head -c 200 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 100 | md5sum | awk '{print $1}')
 COMBINED="${SALT}__${PASSWORD}"
 HASH=$(echo -n "$COMBINED" | md5sum | awk '{print $1}')
 NOW=$(date '+%Y-%m-%d %H:%M:%S')

@@ -7,10 +7,15 @@ class Database {
         $newDB = !file_exists($dbPath);
 
         try {
-            $this->db = new SQLite3($dbPath);
-
             if ($newDB) {
+                // Check if the database file exists
+                if (!file_exists($dbPath)) {
+                // Create the database file
+                touch($dbFile);
+                $this->db = new SQLite3($dbPath);
                 $this->initializeSchema();
+            } else { 
+                $this->db = new SQLite3($dbPath);
             }
         } catch (Exception $e) {
             die("Database connection failed: " . $e->getMessage());

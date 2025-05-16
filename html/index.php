@@ -17,22 +17,24 @@ $error = $_GET['error'] ?? '';
   </header>
 
   <main class="main-content">
-    <!-- HTML -->
-      <form action="/login" method="post" class="login-form">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" required/>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <button type="submit">Log In</button>
-      </form>
+    <form method="post" action="login.php" class="login-form">
+      <h2>Login</h2>
+      <?php if (isset($_GET['error'])): ?>
+        <p class="error-message"><?= htmlspecialchars($_GET['error']) ?></p>
+      <?php endif; ?>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
     
-    <?php if ($error): ?>
-      <p style="color:red"><?= htmlspecialchars($error) ?></p>
-    <?php endif; ?>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+    
+      <button type="submit">Log In</button>
+    </form>
   </main>
 
   <footer class="footer">

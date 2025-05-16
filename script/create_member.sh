@@ -26,6 +26,8 @@ if [ ! -f "$DB_PATH" ]; then
         echo "❌ Failed to create database."
         exit 1
     fi
+else
+    echo "DB Exists already"
 fi
 
 # Generate 100-character alphanumeric salt

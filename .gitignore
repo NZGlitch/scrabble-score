@@ -1,3 +1,4 @@
 *.pem
 includes/database.db
 ignore
+**.DS_STORE

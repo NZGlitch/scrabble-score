@@ -14,7 +14,7 @@ PASSWORD="$4"
 # Get the directory where this script lives
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Now define DB_PATH relative to script dir
+# Paths relative to script location
 DB_PATH="$SCRIPT_DIR/../data/scrabble.db"
 PHP_INIT_SCRIPT="$SCRIPT_DIR/../includes/db.php"
 
@@ -26,8 +26,6 @@ if [ ! -f "$DB_PATH" ]; then
         echo "❌ Failed to create database."
         exit 1
     fi
-else
-    echo "DB Exists already"
 fi
 
 # Generate 100-character alphanumeric salt

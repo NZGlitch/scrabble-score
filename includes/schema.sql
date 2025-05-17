@@ -10,3 +10,8 @@ CREATE TABLE IF NOT EXISTS members (
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL
 );
+CREATE TABLE IF NOT EXISTS migrations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file TEXT NOT NULL,
+    created_at DATETIME NOT NULL
+);

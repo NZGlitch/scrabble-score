@@ -1,6 +1,8 @@
 <?php
-require_once 'authcheck.php';
-?>
+require_once __DIR__ . '/../../includes/admin/authcheck.php';
+require_once __DIR__ . '/../../includes/admin/layout.php';
+
+/**
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,3 +14,4 @@ require_once 'authcheck.php';
     <a href="logout.php">Logout</a>
 </body>
 </html>
+*//

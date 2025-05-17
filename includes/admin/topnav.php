@@ -47,7 +47,11 @@
             <li><a class="dropdown-item" href="#">View Results</a></li>
           </ul>
         </li>
-
+        
+        <!-- Logout button aligned to the right -->
+        <form class="d-flex ms-auto" action="logout.php" method="post">
+          <button class="btn btn-outline-light" type="submit">Logout</button>
+        </form>
       </ul>
     </div>
   </div>

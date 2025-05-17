@@ -1,8 +1,8 @@
 <?php
-session_start();
-require_once __DIR__ . '/../../includes/Auth.php';
+require_once __DIR__ . '/SessionManager.php';
 
-if (!Auth::isLoggedIn()) {
-    header('Location: /index.php');
+if (SessionManager::isSessionExpired()) {
+    SessionManager::destroySession();
+    header('Location: /index.php?error=session_expired');
     exit;
 }

@@ -1,9 +1,13 @@
 <?php
+
+if (session_status() === PHP_SESSION_NONE) session_start();
+
 class SessionManager {
-    private $db = $GLOBALS['db']->getHandle();
+    private $db;
     private $memberNumber;
 
     public function __construct($memberNumber) {
+        $this->db = $GLOBALS['db']->getHandle();
         $this->memberNumber = $memberNumber;
     }
 

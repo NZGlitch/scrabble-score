@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/admin/SessionManager.php';
 
 class Auth {
     
@@ -23,19 +24,14 @@ class Auth {
         $expectedHash = hash('sha256', $salt . '__' . $password);
 
         if ($expectedHash === $user['password_hash']) {
-            $_SESSION['user_id'] = $user['member_number'];
-            $_SESSION['first_name'] = $user['first_name'];
+            $session = new SessionManager($user['member_number']);
+            $apikey = $session->createApiKey();
+
+            $GLOBALS['session'] = $session;
+            $GLOBALS['apikey'] = $apikey;
             return true;
         }
 
         return false;
-    }
-
-    public static function logout(): void {
-        session_destroy();
-    }
-
-    public static function isLoggedIn(): bool {
-        return isset($_SESSION['user_id']);
     }
 }

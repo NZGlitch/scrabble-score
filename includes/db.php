@@ -2,7 +2,7 @@
 
 class Database {
     private static final $dbFile = __DIR__ . '/../data/scrabble.db';
-    private static final $schemaFile = __DIR__ . '/../data/scrabble.db';
+    private static final $schemaFile = __DIR__ . '/../data/schema.sql';
     private static final $migrationPath = __DIR__ . '/../data/migrations/';
     
     private static $instance = null;

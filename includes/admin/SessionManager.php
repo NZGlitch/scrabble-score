@@ -69,7 +69,9 @@ class SessionManager {
     }
 
     public static function login(string $email, string $password): bool {
-        $stmt = $db->prepare("SELECT * FROM members WHERE email = :email");
+        require_once __DIR__ . '/../db.php';
+        global $db;
+        $stmt = $db->getHandle()->prepare("SELECT * FROM members WHERE email = :email");
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 

@@ -1,9 +1,9 @@
 <?php
 
 class Database {
-    private static final $dbFile = __DIR__ . '/../data/scrabble.db';
-    private static final $schemaFile = __DIR__ . '/../data/schema.sql';
-    private static final $migrationPath = __DIR__ . '/../data/migrations/';
+    private static $dbFile = __DIR__ . '/../data/scrabble.db';
+    private static $schemaFile = __DIR__ . '/../data/schema.sql';
+    private static $migrationPath = __DIR__ . '/../data/migrations/';
     
     private static $instance = null;
     private $pdo = null;
@@ -15,7 +15,7 @@ class Database {
             if ($newDB) {
                 touch(self::$dbFile);
                 $this->connect();
-                initializeSchema();
+                $this->initializeSchema();
             }
         } catch (Exception $e) {
             die("Database conection failed: " . $e->getMessage());
@@ -66,17 +66,17 @@ class Database {
             }
         }
     }
-}
 
-public static function getInstance() {
-    if (self::$instance === null) {
-        self::$instance = new self(__DIR__ . '/../data/scrabble.db');
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new self(__DIR__ . '/../data/scrabble.db');
+        }
+        return self::$instance;
     }
-    return self::$instance;
-}
 
-public function getHandle() {
-    return $this->pdo;
+    public function getHandle() {
+        return $this->pdo;
+    }
 }
 
 // Instantiate once for global use

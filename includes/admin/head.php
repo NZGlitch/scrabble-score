@@ -11,5 +11,5 @@
 
   <!-- Bootstrap JS and Popper.js from CDN (for dropdowns etc.) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>localStorage.setItem('api_key', '<?= $_SESSION['api_key'] ?>');</script>";
+  <script>localStorage.setItem('api_key', '<?= $_SESSION['api_key'] ?>')</script>
 </head>

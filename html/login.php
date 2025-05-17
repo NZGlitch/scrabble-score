@@ -6,7 +6,7 @@ $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
 if (Auth::login($email, $password)) {
-    header('Location: admin/admin.php');
+    header('Location: /admin/');
     exit;
 } else {
     header('Location: index.php?error=Invalid login');

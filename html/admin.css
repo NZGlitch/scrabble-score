@@ -1,0 +1,40 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f0fa;
+  color: #2d0c45;
+}
+
+/* Top Navigation Bar */
+.navbar {
+  background-color: #5e2a84; /* Deep purple */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-toggler-icon {
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #ffd700 !important; /* Gold on hover */
+}
+
+.navbar .dropdown-menu {
+  background-color: #7e57c2; /* Lavender */
+}
+
+.navbar .dropdown-item {
+  color: #fff;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #d1c4e9; /* Light lavender */
+  color: #2d0c45;
+}

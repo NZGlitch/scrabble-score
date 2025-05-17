@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Scrabble Score</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,8 +14,7 @@
             Admin
           </a>
           <ul class="dropdown-menu" aria-labelledby="adminDropdown">
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <!-- More admin items here -->
+            <li><a class="dropdown-item" href="#">Dashboard</a></li>
           </ul>
         </li>
 
@@ -25,8 +24,7 @@
             Membership
           </a>
           <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
-            <li><a class="dropdown-item" href="#">Add Member</a></li>
-            <!-- More membership items here -->
+            <li><a class="dropdown-item" href="#">Manage Members</a></li>
           </ul>
         </li>
 
@@ -36,8 +34,7 @@
             Sessions
           </a>
           <ul class="dropdown-menu" aria-labelledby="sessionsDropdown">
-            <li><a class="dropdown-item" href="#">View Sessions</a></li>
-            <!-- More session items here -->
+            <li><a class="dropdown-item" href="#">Session List</a></li>
           </ul>
         </li>
 
@@ -47,8 +44,7 @@
             Results
           </a>
           <ul class="dropdown-menu" aria-labelledby="resultsDropdown">
-            <li><a class="dropdown-item" href="#">Latest Results</a></li>
-            <!-- More results items here -->
+            <li><a class="dropdown-item" href="#">View Results</a></li>
           </ul>
         </li>
 

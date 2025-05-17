@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  scrabble-score-app:
+    build: .
+    container_name: scrabble-score-app
+    ports:
+      - "8080:80"
+    volumes:
+       - ./html:/var/www/html
+       - ./includes:/var/www/includes
+       - ./data:/var/www/data
+    restart: unless-stopped

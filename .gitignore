@@ -1,0 +1,4 @@
+*.pem
+ignore
+**.DS_STORE
+data/scrabble.db

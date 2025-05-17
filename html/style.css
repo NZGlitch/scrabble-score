@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #4b2e83; /* rich purple */
+  --secondary-color: #f0e6ff; /* light lavender */
+  --accent-color: #ffb400; /* gold accent */
+  --text-color: #333;
+  --bg-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--bg-color);
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.login-form {
+  max-width: 400px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #203864;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #203864;
+}
+
+input[type="email"],
+
+input[type="password"] {
+  width: 100%;
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 0.85em;
+  font-size: 1.1em;
+  background-color: #203864;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #fcb814;
+  color: black;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
